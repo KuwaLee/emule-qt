@@ -59,6 +59,8 @@ private slots:
     void savedTorrentsWithoutASession();
     void exportsWhatIsSeeded_data();
     void exportsWhatIsSeeded();
+    void seedSurvivesARestart_data();
+    void seedSurvivesARestart();
 
 private:
     QTemporaryDir m_dir;
@@ -102,7 +104,7 @@ void tst_BtTorrentCreator::singleFileFormats()
     QCOMPARE(r.pieces, 5);
     QCOMPARE(BtTorrentCreator::countPieces(p).value_or(-1), 5);
     const auto preview = BtSession::inspectTorrentFile(r.data);
-    QVERIFY2(preview, qPrintable(preview.error()));
+    QVERIFY2(preview, qPrintable(preview ? QString() : preview.error()));
     QCOMPARE(!preview->hashV1.isEmpty(), v1);
     QCOMPARE(!preview->hashV2.isEmpty(), v2);
     QCOMPARE(contentSize(*preview), 300 * 1024 + 7);
@@ -311,7 +313,7 @@ void tst_BtTorrentCreator::exportsWhatIsSeeded()
 
     const auto made = BtSession::inspectTorrentFile(r.data);
     const auto back = BtSession::inspectTorrentFile(out);
-    QVERIFY2(back, qPrintable(back.error()));
+    QVERIFY2(back, qPrintable(back ? QString() : back.error()));
     QCOMPARE(back->hashV1, made->hashV1);
     QCOMPARE(back->hashV2, made->hashV2);
     QCOMPARE(back->comment, p.comment);
@@ -323,6 +325,48 @@ void tst_BtTorrentCreator::exportsWhatIsSeeded()
     // a re-add of the export is the same torrent
     QCOMPARE(session.addTorrentFile(out, r.savePath).outcome, BtAddOutcome::Duplicate);
     session.stop();
+}
+
+void tst_BtTorrentCreator::seedSurvivesARestart_data()
+{
+    exportsWhatIsSeeded_data();
+}
+
+// #212: a created torrent that is seeded is still listed, complete, after a restart
+void tst_BtTorrentCreator::seedSurvivesARestart()
+{
+    QFETCH(int, format);
+    BtCreateParams p;
+    p.path = m_dir.filePath(QStringLiteral("one.bin"));
+    p.format = BtTorrentFormat(format);
+    const BtCreateResult r = create(p);
+    QVERIFY2(r.ok, qPrintable(r.error));
+
+    QTemporaryDir state;
+    BtSettings s;
+    s.listenPort = 0;
+    s.dht = false;
+    s.lsd = false;
+    s.stateDir = state.filePath(QStringLiteral("BT"));
+    s.downloadDir = state.filePath(QStringLiteral("Incoming"));
+    QString id;
+    {
+        BtSession session;
+        session.start(s);
+        const BtAddResult added = session.addCreatedTorrent(r.data, r.savePath);
+        QCOMPARE(added.outcome, BtAddOutcome::Added);
+        id = added.id;
+        QTRY_VERIFY_WITH_TIMEOUT(session.torrent(id) && session.torrent(id)->totalSize > 0
+                                     && session.torrent(id)->haveBytes == session.torrent(id)->totalSize,
+                                 10000);
+        session.stop();
+    }
+    BtSession again;
+    again.start(s);
+    QTRY_VERIFY_WITH_TIMEOUT(again.torrent(id).has_value(), 10000);
+    QTRY_VERIFY_WITH_TIMEOUT(again.torrent(id)->totalSize > 0 && again.torrent(id)->haveBytes == again.torrent(id)->totalSize,
+                             10000);
+    again.stop();
 }
 
 QTEST_GUILESS_MAIN(tst_BtTorrentCreator)

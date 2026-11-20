@@ -460,6 +460,7 @@ if(EMULE_BITTORRENT)
     # unfinished torrents kept out of the share (#124)
     emule_add_test(tst_BtShareGuard FOLDER "BitTorrent"
         SOURCES tst_BtShareGuard.cpp "${CMAKE_SOURCE_DIR}/src/daemon/BtShareGuard.cpp"
+                "${CMAKE_SOURCE_DIR}/src/daemon/BtFileIndex.cpp"
                 "${CMAKE_SOURCE_DIR}/src/daemon/LandedFiles.cpp"
         LIBRARIES eMule::Bt eMule::Core)
     target_include_directories(tst_BtShareGuard PRIVATE "${CMAKE_SOURCE_DIR}/src/daemon")
@@ -1787,6 +1788,13 @@ emule_add_test(tst_IrcTabActivity FOLDER "Gui"
             "${CMAKE_SOURCE_DIR}/src/gui/utils/Appearance.cpp")
 target_include_directories(tst_IrcTabActivity PRIVATE "${CMAKE_SOURCE_DIR}/src/gui")
 target_link_libraries(tst_IrcTabActivity PRIVATE eMule::Core eMule::Ipc Qt6::Widgets)
+
+# Search name box history: Del / Ctrl+Del in the drop-down, context menu, Options reset
+emule_add_test(tst_SearchHistory FOLDER "Gui"
+    SOURCES tst_SearchHistory.cpp
+            "${CMAKE_SOURCE_DIR}/src/gui/panels/SearchPanel.cpp")
+target_include_directories(tst_SearchHistory PRIVATE "${CMAKE_SOURCE_DIR}/src/gui")
+target_link_libraries(tst_SearchHistory PRIVATE eMule::Core eMule::Ipc Qt6::Widgets)
 
 emule_add_test(tst_TextLinks FOLDER "Ipc"
     SOURCES tst_TextLinks.cpp

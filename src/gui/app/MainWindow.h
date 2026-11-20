@@ -251,6 +251,9 @@ public:
     void updateTransferRates(double upKBs, double downKBs,
                              double upOverheadKBs, double downOverheadKBs);
 
+    /// GetStats' sessionTotals: per-network {down, up} bytes this session (#223)
+    void setSessionTotals(const QCborMap& totals);
+
     /// Replace the free-text message on the left of the status bar.
     void setStatusMessage(const QString& text);
 
@@ -395,6 +398,8 @@ private:
     void setupStatusBar();
     /// m_statusFreeSpace for the current page: torrent, Usenet, hoster or incoming folder
     void updateFreeSpaceLabel();
+    /// m_statusSessionTotals from m_sessionTotals, hidden while the option is off
+    void updateSessionTotalsLabel();
     void updateAttachIndicator();   ///< status bar core attach/detach icon
     /// GetEd3kStatus once per connection; pushes keep it current.
     void requestEd3kStatus();
@@ -506,6 +511,8 @@ private:
     QLabel* m_statusUss = nullptr;    ///< Upload SpeedSense ping, MFC SBarUSS
     QLabel* m_statusFreeSpace = nullptr;   ///< free space of the current window's save folder (#165)
     QCborMap m_saveFolderSpace;
+    QLabel* m_statusSessionTotals = nullptr;   ///< session down/up of all networks (#223)
+    QCborMap m_sessionTotals;
     QString m_ed2kServerName;
     qint64 m_ed2kServerUsers = 0;
     QLabel* m_statusKad = nullptr;
@@ -547,6 +554,7 @@ private:
     bool m_waylandMinimizeHooked = false;
     QSoundEffect* m_notifySound = nullptr;
     QStringList m_lastNotification;   ///< title, text, sound — what was last asked for
+    bool m_popupDropLogged = false;   ///< logged once that a pop-up had no tray icon
     std::function<void()> m_notificationClick;   ///< click on the last pop-up; empty = restore
     QElapsedTimer m_lastLogNotify;    ///< when notifyLogEntry() last showed one
     QPointer<QMessageBox> m_coreProblemBox;

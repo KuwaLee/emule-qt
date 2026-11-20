@@ -18,6 +18,7 @@
 #include "app/AppContext.h"
 #include "files/PartFile.h"
 #include "geo/IP2Country.h"
+#include "prefs/Preferences.h"
 #include "transfer/DownloadQueue.h"
 
 #ifdef EMULE_HAVE_ED3K
@@ -79,6 +80,7 @@ QCborMap rowToCbor(const ed3k::Ed3kUploads::Row& r, qint64 nowMs)
         {QStringLiteral("port"), int(r.port)},
         {QStringLiteral("cc"), r.address.isEmpty() ? QString() : countryCodeOf(QHostAddress(r.address))},
         {QStringLiteral("sessionUp"), qint64(std::min<std::uint64_t>(r.bytes, INT64_MAX))},
+        {QStringLiteral("upDatarate"), qint64(std::min<std::uint64_t>(r.rate, INT64_MAX))},
         {QStringLiteral("waitStartTime"), r.holding ? qint64(0) : held},
         {QStringLiteral("uploadStartDelay"), r.holding ? held : qint64(0)},
         {QStringLiteral("queueRank"), r.place},
@@ -125,7 +127,7 @@ QString keyOf(::ed3k::KeyKind key, const ::ed3k::NodeId& node)
 std::pair<int, int> piecesOf(const SourceInfo& s)
 {
     const auto pieces = int(std::min<std::uint64_t>(s.size / kPiece + (s.size % kPiece != 0 ? 1 : 0), INT32_MAX));
-    if (s.have.empty())
+    if (!s.haveKnown)
         return {0, pieces};
     int held = 0;
     for (int p = 0; p < pieces; ++p)
@@ -173,7 +175,7 @@ QCborMap sourceToCbor(const SourceInfo& s)
     const auto [up, down] = s_uploads->peerBytes(s.key, s.node);
     Q_UNUSED(up)
     QCborArray partMap;
-    if (!s.have.empty()) {
+    if (s.haveKnown) {   // was: !have.empty() (an empty bitmap is the complete file)
         // buildSourcePartMap's codes: 1 both have, 2 it has / we need, 3 asked, 4 receiving
         std::set<std::size_t> asked;
         for (const auto off : s.asked)
@@ -265,7 +267,7 @@ QCborMap sourcePart(const SourceInfo& s)
         {QStringLiteral("fileSize"), qint64(std::min<std::uint64_t>(s.size, INT64_MAX))},
         {QStringLiteral("root"), hexOf(s.root.bytes)},
         {QStringLiteral("state"), s.holding ? QStringLiteral("Downloading") : QStringLiteral("OnQueue")},
-        {QStringLiteral("haveKnown"), !s.have.empty()},
+        {QStringLiteral("haveKnown"), s.haveKnown},
         {QStringLiteral("parts"), pieces},
         {QStringLiteral("availParts"), held},
     };
@@ -321,7 +323,9 @@ std::optional<QCborMap> details(const QString& key)
         return std::nullopt;
     const auto wanted = anon ? ::ed3k::KeyKind::Anon : ::ed3k::KeyKind::Node;
     const auto match = [&](const ed3k::Ed3kUploads::Row& r) {
-        return r.key == wanted && std::equal(r.node.bytes.begin(), r.node.bytes.end(), raw.begin());
+        // was: raw.begin(): signed char vs uint8, a node byte >= 0x80 never matched (Details empty)
+        return r.key == wanted
+            && std::equal(r.node.bytes.begin(), r.node.bytes.end(), reinterpret_cast<const std::uint8_t*>(raw.constData()));
     };
     ::ed3k::NodeId node;
     std::copy(raw.begin(), raw.end(), node.bytes.begin());
@@ -473,6 +477,20 @@ void appendNetworkDownloading([[maybe_unused]] QCborArray& out)
         else if (job.tag == QLatin1String("hoster"))
             Ed3kHosterBridge::appendDownloading(out, job.owner);
     }
+#endif
+}
+
+void appendNetworkUploading([[maybe_unused]] QCborArray& uploading)
+{
+#ifdef EMULE_HAVE_ED3K
+    if (!s_uploads)
+        return;
+    QStringList ids = thePrefs.btSingleTransferOn() ? BtBridge::jobIds(false) : QStringList();
+    for (const auto& job : ed3k::Ed3kJoinBase::networkJobsAt(s_uploads->session()))
+        if (job.tag == QLatin1String("torrent") && !ids.contains(job.owner))
+            ids << job.owner;
+    for (const QString& id : std::as_const(ids))
+        BtBridge::appendUploading(uploading, id);
 #endif
 }
 
