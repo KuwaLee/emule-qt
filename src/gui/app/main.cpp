@@ -1461,26 +1461,19 @@ int main(int argc, char* argv[])
                 return;
 
             // Click: open the finished file when asked to and the core shares our
-            // disk (MFC shell-opens it); downloads otherwise show the Transfers window.
+            // disk (MFC shell-opens it). Personal: never brings up the window.
             std::function<void()> onClick;
-            if (added || kind == NotifierEvent::DownloadFinished) {
-                QString path;
-                if (kind == NotifierEvent::DownloadFinished
-                    && eMule::thePrefs.notifyOpenFinishedOnClick()
-                    && ipcClient.isLocalConnection())
-                    path = msg.fieldString(2);
-                onClick = [&mainWindow, path]() {
-                    // Logged: a click that silently falls back is hard to tell apart (#160)
-                    if (!path.isEmpty()) {
-                        if (!QFileInfo::exists(path))
-                            eMule::logDebug(QStringLiteral("Pop-up click: '%1' not found").arg(path));
-                        else if (QDesktopServices::openUrl(QUrl::fromLocalFile(path)))
-                            return eMule::logDebug(QStringLiteral("Pop-up click: opened '%1'").arg(path));
-                        else
-                            eMule::logDebug(QStringLiteral("Pop-up click: could not open '%1'").arg(path));
-                    }
-                    mainWindow.restoreWindow();
-                    mainWindow.switchToTab(eMule::MainWindow::TabTransfers);
+            if (kind == NotifierEvent::DownloadFinished
+                && eMule::thePrefs.notifyOpenFinishedOnClick()
+                && ipcClient.isLocalConnection()) {
+                onClick = [path = msg.fieldString(2)]() {
+                    // Logged: a click that silently does nothing is hard to tell apart (#160)
+                    if (path.isEmpty() || !QFileInfo::exists(path))
+                        eMule::logDebug(QStringLiteral("Pop-up click: '%1' not found").arg(path));
+                    else if (QDesktopServices::openUrl(QUrl::fromLocalFile(path)))
+                        eMule::logDebug(QStringLiteral("Pop-up click: opened '%1'").arg(path));
+                    else
+                        eMule::logDebug(QStringLiteral("Pop-up click: could not open '%1'").arg(path));
                 };
             }
             mainWindow.showNotification(note.title, note.text, std::move(onClick));

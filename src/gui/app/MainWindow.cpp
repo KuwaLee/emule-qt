@@ -245,12 +245,11 @@ MainWindow::MainWindow(QWidget* parent)
         connect(m_trayIcon, &QSystemTrayIcon::activated,
                 this, &MainWindow::onTrayIconClicked);
         connect(m_trayIcon, &QSystemTrayIcon::messageClicked, this, [this]() {
+            // Personal: a plain pop-up click (KDE: also dismissing it) no longer restores
             logDebug(QStringLiteral("Pop-up clicked (%1)")
-                         .arg(m_notificationClick ? QStringLiteral("own action") : QStringLiteral("restore")));
+                         .arg(m_notificationClick ? QStringLiteral("own action") : QStringLiteral("ignored")));
             if (m_notificationClick)
                 m_notificationClick();
-            else
-                restoreWindow();
         });
 
         m_trayMenu = new TrayMenuManager(this);
@@ -1394,6 +1393,9 @@ void MainWindow::showEvent(QShowEvent* event)
         return;
     if (QWindow* handle = windowHandle()) {
         connect(handle, &QWindow::windowStateChanged, this, &MainWindow::onWaylandWindowStateChanged);
+        // KWin title bar minimize shows only as "suspended" (unexposed); KDE only
+        if (qEnvironmentVariable("XDG_CURRENT_DESKTOP").contains(QLatin1String("KDE"), Qt::CaseInsensitive))
+            handle->installEventFilter(this);
         m_waylandMinimizeHooked = true;
     }
 }
@@ -1436,6 +1438,10 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event)
     if (obj == qApp) {
         if (event->type() == QEvent::Quit)
             m_quitRequested = true;
+        return false;
+    }
+    if (event->type() == QEvent::Expose && obj == windowHandle()) {
+        onWaylandExposeChanged(windowHandle());
         return false;
     }
     if (event->type() == QEvent::MouseButtonDblClick) {
@@ -3607,9 +3613,25 @@ void MainWindow::onWaylandWindowStateChanged(Qt::WindowState state)
     // minimized (the protocol has no such state), so changeEvent() never sees it.
     // This signal is the only trace. A compositor-side minimize (server-side title
     // bar on KDE/sway, GNOME's Super+H) leaves none: the window just goes down.
-    // KWin's xdg "suspended" is no substitute: it also comes on a desktop switch.
+    // KWin's xdg "suspended" also comes on a desktop switch; caught anyway in
+    // onWaylandExposeChanged (personal).
     if (state != Qt::WindowMinimized || !trayInUse() || !thePrefs.minimizeToTray())
         return;
+    hideToTrayDeferred();
+}
+
+void MainWindow::onWaylandExposeChanged(QWindow* handle)
+{
+    // Runs before QWidgetWindow updates WA_Mapped: set = was exposed. hide() clears it
+    // before unmapping, and a fresh map stays unexposed until configured.
+    if (handle->isExposed() || !testAttribute(Qt::WA_Mapped) || !isVisible() || !trayInUse()
+        || !thePrefs.minimizeToTray())
+        return;
+    hideToTrayDeferred();
+}
+
+void MainWindow::hideToTrayDeferred()
+{
     // Widget state still holds maximized here; Qt's "not minimized" report comes later
     const Qt::WindowStates keep = windowState() & (Qt::WindowMaximized | Qt::WindowFullScreen);
     // Deferred: the request comes from inside the decoration's mouse handler, and
