@@ -889,13 +889,18 @@ De core blijft luisteren op TCP-poort %1 en UDP-poort %2.</translation>
         <translation>eD2K luistert op geen TCP-poort en kan dus niet getest worden.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <location line="+121"/>
+        <location line="+2"/>
+        <source>The network interface selected in Options has no public address known yet, so nothing could be tested over it. Connect to the network first, then test again.</source>
+        <translation>De in Opties gekozen netwerkinterface heeft nog geen bekend openbaar adres, dus er kon niets via deze interface getest worden. Maak eerst verbinding met het netwerk en test dan opnieuw.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+141"/>
         <source>The core did not run the test.</source>
         <translation>De core heeft de test niet uitgevoerd.</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-94"/>
         <source>TCP: %1</source>
         <translation>TCP: %1</translation>
     </message>
@@ -970,6 +975,16 @@ De core blijft luisteren op TCP-poort %1 en UDP-poort %2.</translation>
         <translation>UDP is niet bereikbaar. De node vindt dan minder peers en is afhankelijk van hole punching.</translation>
     </message>
     <message>
+        <location line="+5"/>
+        <source>Some test packets from the website did not arrive, but peers prove the port open: the packets were lost on the way (often dropped by a VPN or provider), the port is not closed.</source>
+        <translation>Sommige testpakketten van de website kwamen niet aan, maar peers bewijzen dat de poort open is: de pakketten gingen onderweg verloren (vaak weggegooid door een VPN of provider), de poort is niet gesloten.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The website&apos;s test packets did not arrive.</source>
+        <translation>De testpakketten van de website kwamen niet aan.</translation>
+    </message>
+    <message>
         <location line="+17"/>
         <location line="+26"/>
         <location line="+4"/>
@@ -988,19 +1003,78 @@ De core blijft luisteren op TCP-poort %1 en UDP-poort %2.</translation>
         <translation>Testen...</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+58"/>
+        <source>other ed3k nodes reach this node at %1</source>
+        <translation>andere ed3k-nodes bereiken deze node op %1</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>eD2K clients reach this UDP port at %1 (Kad check passed)</source>
+        <translation>eD2K-clients bereiken deze UDP-poort op %1 (Kad-controle geslaagd)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>the eD2K server gave a High ID at %1</source>
+        <translation>de eD2K-server gaf een High ID op %1</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>The website&apos;s test failed (%1).</source>
+        <translation>De test van de website is mislukt (%1).</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The website&apos;s test connection got no answer: it was dropped on the way.</source>
+        <translation>De testverbinding van de website kreeg geen antwoord: ze werd onderweg weggegooid.</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+2"/>
+        <source>None of the %n test packet(s) from the website arrived: lost on the way.</source>
+        <translation>
+            <numerusform>Het %n testpakket van de website kwam niet aan: onderweg verloren.</numerusform>
+            <numerusform>Geen van de %n testpakketten van de website kwam aan: onderweg verloren.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The website&apos;s test packet did not arrive: lost on the way.</source>
+        <translation>Het testpakket van de website kwam niet aan: onderweg verloren.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>reachable, %1.</source>
+        <translation>bereikbaar, %1.</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+3"/>
+        <source>not reachable: none of the %n test packet(s) arrived (firewall or missing port forwarding)</source>
+        <translation>
+            <numerusform>niet bereikbaar: het %n testpakket kwam niet aan (firewall of ontbrekende port forwarding)</numerusform>
+            <numerusform>niet bereikbaar: geen van de %n testpakketten kwam aan (firewall of ontbrekende port forwarding)</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Only IPv4 was tested: the network interface %1 selected in Options has no IPv6.</source>
+        <translation>Alleen IPv4 is getest: de in Opties gekozen netwerkinterface %1 heeft geen IPv6.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Only IPv6 was tested: the network interface %1 selected in Options has no IPv4.</source>
+        <translation>Alleen IPv6 is getest: de in Opties gekozen netwerkinterface %1 heeft geen IPv4.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Peers see this node at %1, not at the tested address, so this result does not apply to it. The test request likely took another route (VPN, proxy or a second internet line).</source>
         <translation>Peers zien deze node op %1, niet op het geteste adres, dus dit resultaat geldt er niet voor. Het testverzoek nam waarschijnlijk een andere route (VPN, proxy of een tweede internetlijn).</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>ed3k peers already reach this node at %1, so the port is open. The test packet was likely lost on the way.</source>
-        <translation>ed3k-peers bereiken deze node al op %1, dus de poort is open. Het testpakket is waarschijnlijk onderweg verloren gegaan.</translation>
+        <translation type="vanished">ed3k-peers bereiken deze node al op %1, dus de poort is open. Het testpakket is waarschijnlijk onderweg verloren gegaan.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The server gave a High ID at this address, so the TCP port is open. The test connection was likely lost on the way.</source>
-        <translation>De server gaf op dit adres een High ID, dus de TCP-poort is open. De testverbinding is waarschijnlijk onderweg verloren gegaan.</translation>
+        <translation type="vanished">De server gaf op dit adres een High ID, dus de TCP-poort is open. De testverbinding is waarschijnlijk onderweg verloren gegaan.</translation>
     </message>
 </context>
 <context>
@@ -1267,7 +1341,7 @@ Het nieuwe certificaat vertrouwen?</translation>
         <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="+3987"/>
+        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="+3981"/>
         <source>Test</source>
         <translation>Testen</translation>
     </message>
@@ -2903,7 +2977,7 @@ M	gecomprimeerde gegevens nog niet volledig gedownload
 <context>
     <name>eMule::BugReportDialog</name>
     <message>
-        <location filename="../src/gui/dialogs/BugReportDialog.cpp" line="+60"/>
+        <location filename="../src/gui/dialogs/BugReportDialog.cpp" line="+61"/>
         <location line="+139"/>
         <location line="+144"/>
         <source>Submit Bug Report</source>
@@ -11727,7 +11801,7 @@ Doorgaan?</translation>
         </translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+117"/>
         <source>ed3k node list</source>
         <translation>ed3k-nodelijst</translation>
     </message>
@@ -16502,12 +16576,12 @@ U gebruikt %2. De website van eMule Qt openen?</translation>
     <message>
         <location line="+21"/>
         <location line="+7"/>
-        <location line="+1259"/>
+        <location line="+1260"/>
         <source>Version Check</source>
         <translation>Versiecontrole</translation>
     </message>
     <message>
-        <location line="-1265"/>
+        <location line="-1266"/>
         <source>You are running the latest version of eMule Qt (v%1).</source>
         <translation>U gebruikt de nieuwste versie van eMule Qt (v%1).</translation>
     </message>
@@ -16566,12 +16640,12 @@ Schakel er minstens één in onder Opties → Verbinding om te verbinden.</trans
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1781"/>
+        <location line="+1787"/>
         <source>eD2K: Disconnected</source>
         <translation>eD2K: verbinding verbroken</translation>
     </message>
     <message>
-        <location line="-1772"/>
+        <location line="-1778"/>
         <source>eD2K Server: %1  (%2 Users)</source>
         <translation>eD2K-server: %1  (%2 gebruikers)</translation>
     </message>
@@ -16612,12 +16686,12 @@ Schakel er minstens één in onder Opties → Verbinding om te verbinden.</trans
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1698"/>
+        <location line="+1704"/>
         <source>Kad: Disconnected</source>
         <translation>Kad: verbinding verbroken</translation>
     </message>
     <message>
-        <location line="-1654"/>
+        <location line="-1660"/>
         <source>ed3k: Connected</source>
         <translation>ed3k: verbonden</translation>
     </message>
@@ -16687,7 +16761,40 @@ Router: %6</translation>
         <translation>verborgen (%1/%2 paden)</translation>
     </message>
     <message>
-        <location line="+2624"/>
+        <location line="+1762"/>
+        <source>Built without the hoster resolver, cannot open %1.</source>
+        <translation>Gebouwd zonder hoster-resolver, %1 kan niet worden geopend.</translation>
+    </message>
+    <message>
+        <location line="+661"/>
+        <source>Usenet Disabled</source>
+        <translation>Usenet uitgeschakeld</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Usenet is turned off, so NZB files and links cannot be added.
+
+Turn it on under Options → Usenet, then try again.</source>
+        <translation>Usenet staat uit, dus NZB-bestanden en -links kunnen niet worden toegevoegd.
+
+Zet het aan onder Opties → Usenet en probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Hoster Downloads Disabled</source>
+        <translation>Hoster-downloads uitgeschakeld</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Hoster downloads are turned off, so link containers cannot be opened.
+
+Turn them on under Options → ed3k → Hoster, then try again.</source>
+        <translation>Hoster-downloads staan uit, dus linkcontainers kunnen niet worden geopend.
+
+Zet ze aan onder Opties → ed3k → Hoster en probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <location line="+206"/>
         <source>eD2K</source>
         <translation>eD2K</translation>
     </message>
@@ -16722,7 +16829,7 @@ Router: %6</translation>
         <translation>Gebruikers: %1 | Bestanden: %2</translation>
     </message>
     <message>
-        <location line="-2620"/>
+        <location line="-2634"/>
         <source>Up: %1(%2)</source>
         <translation>Uit: %1(%2)</translation>
     </message>
@@ -16759,7 +16866,7 @@ Up: %3 | Down: %4</source>
 Up: %3 | Down: %4</translation>
     </message>
     <message>
-        <location line="+117"/>
+        <location line="+130"/>
         <source>Are you sure you want to exit eMule?
 
 The core is attached: it stops with the GUI, and so do all downloads and uploads.</source>
@@ -16881,7 +16988,7 @@ De core is losgekoppeld: hij blijft draaien met alle downloads en uploads. Open 
         <translation>eMule-instellingenwizard voor eerste keer...</translation>
     </message>
     <message>
-        <location line="-892"/>
+        <location line="-898"/>
         <source>Unlimited</source>
         <translation>Onbeperkt</translation>
     </message>
@@ -16910,7 +17017,7 @@ Dubbelklik om te wijzigen</translation>
         <translation>Poorttest mislukt: een probe kwam niet door</translation>
     </message>
     <message>
-        <location line="+686"/>
+        <location line="+692"/>
         <source>IP Filter...</source>
         <translation>IP-filter...</translation>
     </message>
@@ -17005,12 +17112,12 @@ Schakel hem in onder Opties → Webinterface en probeer het opnieuw.</translatio
     </message>
     <message>
         <location line="+3"/>
-        <location line="+1617"/>
+        <location line="+1928"/>
         <source>Open Options</source>
         <translation>Opties openen</translation>
     </message>
     <message>
-        <location line="-1390"/>
+        <location line="-1701"/>
         <source>Main</source>
         <translation>Hoofdmenu</translation>
     </message>
@@ -17157,27 +17264,24 @@ Schakel hem in onder Opties → Webinterface en probeer het opnieuw.</translatio
         <translation>Dubbelklik voor netwerkinformatie</translation>
     </message>
     <message>
-        <location line="+160"/>
         <source>Add NZB</source>
-        <translation>NZB toevoegen</translation>
+        <translation type="vanished">NZB toevoegen</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Usenet is off. Turn it on in Options to add %1.</source>
-        <translation>Usenet staat uit. Zet het aan in Opties om %1 toe te voegen.</translation>
+        <translation type="vanished">Usenet staat uit. Zet het aan in Opties om %1 toe te voegen.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+171"/>
         <source>Open DLC</source>
         <translation>DLC openen</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Hoster downloads are off. Turn them on in Options to open %1.</source>
-        <translation>Hoster-downloads staan uit. Zet ze aan in Opties om %1 te openen.</translation>
+        <translation type="vanished">Hoster-downloads staan uit. Zet ze aan in Opties om %1 te openen.</translation>
     </message>
     <message>
-        <location line="+654"/>
+        <location line="+653"/>
         <source>BitTorrent Disabled</source>
         <translation>BitTorrent uitgeschakeld</translation>
     </message>
@@ -17191,7 +17295,7 @@ Turn it on under Options → BitTorrent, then try again.</source>
 Zet het aan onder Opties → BitTorrent en probeer het opnieuw.</translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+123"/>
         <source>New message — double-click to read</source>
         <translation>Nieuw bericht — dubbelklik om te lezen</translation>
     </message>
@@ -17206,7 +17310,7 @@ Zet het aan onder Opties → BitTorrent en probeer het opnieuw.</translation>
         <translation>n.v.t.</translation>
     </message>
     <message>
-        <location line="-431"/>
+        <location line="-441"/>
         <source>eD2K Link</source>
         <translation>eD2K-verwijzing</translation>
     </message>
@@ -17385,7 +17489,7 @@ Je krijgt minder bronnen en tragere downloads, en twee Low ID-clients kunnen zel
         <translation>Statistieken</translation>
     </message>
     <message>
-        <location filename="../src/gui/app/MainWindow.cpp" line="+228"/>
+        <location filename="../src/gui/app/MainWindow.cpp" line="+238"/>
         <location filename="../src/gui/app/ToolbarButtons.h" line="+1"/>
         <source>Usenet</source>
         <translation>Usenet</translation>
@@ -19275,36 +19379,36 @@ Opnieuw downloaden?</translation>
 <context>
     <name>eMule::OptionsDialog</name>
     <message>
-        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="-3855"/>
+        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="-3849"/>
         <source>Options</source>
         <translation>Opties</translation>
     </message>
     <message>
         <location line="+78"/>
-        <location line="+2714"/>
+        <location line="+2708"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-2713"/>
-        <location line="+2714"/>
+        <location line="-2707"/>
+        <location line="+2708"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location line="-2713"/>
-        <location line="+6971"/>
+        <location line="-2707"/>
+        <location line="+6965"/>
         <source>Apply</source>
         <translation>Toepassen</translation>
     </message>
     <message>
-        <location line="-6970"/>
+        <location line="-6964"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location line="+313"/>
-        <location line="+2693"/>
+        <location line="+312"/>
+        <location line="+2688"/>
         <location line="+59"/>
         <location line="+6"/>
         <location line="+4"/>
@@ -19316,7 +19420,7 @@ Opnieuw downloaden?</translation>
         <translation>IP-filter</translation>
     </message>
     <message>
-        <location line="-2808"/>
+        <location line="-2803"/>
         <source>IP filter reloaded: %1 entries.</source>
         <translation>IP-filter opnieuw geladen: %1 regels.</translation>
     </message>
@@ -19343,13 +19447,13 @@ Opnieuw downloaden?</translation>
     <message>
         <location line="-65"/>
         <location line="+66"/>
-        <location line="+3188"/>
+        <location line="+3183"/>
         <location line="+3422"/>
         <source>Usenet</source>
         <translation>Usenet</translation>
     </message>
     <message>
-        <location line="-7294"/>
+        <location line="-7288"/>
         <source>Search options</source>
         <translation>Opties doorzoeken</translation>
     </message>
@@ -19363,30 +19467,30 @@ Enter: volgende pagina, Esc: wissen</translation>
     <message>
         <location line="+622"/>
         <location line="+63"/>
-        <location line="+6610"/>
-        <location line="+2870"/>
+        <location line="+6605"/>
+        <location line="+2865"/>
         <source>BitTorrent</source>
         <translation>BitTorrent</translation>
     </message>
     <message>
-        <location line="-9354"/>
+        <location line="-9344"/>
         <source>User Name</source>
         <translation>Gebruikersnaam</translation>
     </message>
     <message>
         <location line="+8"/>
-        <location line="+6875"/>
+        <location line="+6869"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location line="-6872"/>
+        <location line="-6866"/>
         <source>System Default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
         <location line="+14"/>
-        <location line="+1060"/>
+        <location line="+1055"/>
         <location line="+459"/>
         <location line="+570"/>
         <location line="+322"/>
@@ -19394,7 +19498,7 @@ Enter: volgende pagina, Esc: wissen</translation>
         <translation>Diversen</translation>
     </message>
     <message>
-        <location line="-2408"/>
+        <location line="-2403"/>
         <source>Bring to front on link click</source>
         <translation>Naar voren brengen bij klik op verwijzing</translation>
     </message>
@@ -19496,25 +19600,25 @@ Enter: volgende pagina, Esc: wissen</translation>
     <message>
         <location line="+8"/>
         <location line="+40"/>
-        <location line="+6760"/>
+        <location line="+6754"/>
         <source>Core</source>
         <translation>Kern</translation>
     </message>
     <message>
-        <location line="-6773"/>
+        <location line="-6767"/>
         <source>Address:</source>
         <translation>Adres:</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1766"/>
+        <location line="+1761"/>
         <location line="+808"/>
         <location line="+432"/>
         <source>Port:</source>
         <translation>Poort:</translation>
     </message>
     <message>
-        <location line="-3003"/>
+        <location line="-2998"/>
         <source>authentication token</source>
         <translation>authenticatietoken</translation>
     </message>
@@ -19761,7 +19865,7 @@ Auto volgt de uploadcapaciteit: 4 onder 4 Mbit/s, 8 onder 20 Mbit/s, 16 onder 10
         <translation>Bij elke release wordt een database meegeleverd. Een optioneel gratis &lt;a href=&quot;https://www.maxmind.com/en/geolite2/signup&quot;&gt;MaxMind GeoLite2&lt;/a&gt;-account houdt deze tussendoor actueel. Dit product bevat GeoLite2-gegevens gemaakt door MaxMind.</translation>
     </message>
     <message>
-        <location line="-8909"/>
+        <location line="-8904"/>
         <source>Save CPU &amp;&amp; Memory Usage</source>
         <translation>CPU- &amp;&amp; geheugengebruik besparen</translation>
     </message>
@@ -19930,12 +20034,12 @@ Auto volgt de uploadcapaciteit: 4 onder 4 Mbit/s, 8 onder 20 Mbit/s, 16 onder 10
     </message>
     <message>
         <location line="-4757"/>
-        <location line="+8662"/>
+        <location line="+8657"/>
         <source>TCP</source>
         <translation>TCP</translation>
     </message>
     <message>
-        <location line="-8656"/>
+        <location line="-8651"/>
         <source>UDP</source>
         <translation>UDP</translation>
     </message>
@@ -19967,22 +20071,22 @@ Auto volgt de uploadcapaciteit: 4 onder 4 Mbit/s, 8 onder 20 Mbit/s, 16 onder 10
     <message>
         <location line="+4"/>
         <location line="+2015"/>
-        <location line="+6180"/>
+        <location line="+6175"/>
         <source>Any</source>
         <translation>Alle</translation>
     </message>
     <message>
-        <location line="-8193"/>
+        <location line="-8188"/>
         <source>Use only this network interface, for example a VPN tunnel. Pick one from the list, or type an IP address or a subnet such as 10.64.0.0/10 (the interface holding an address in it). Connections through a proxy are not bound.</source>
         <translation>Alleen deze netwerkinterface gebruiken, bijvoorbeeld een VPN-tunnel. Kies er een uit de lijst, of typ een IP-adres of een subnet zoals 10.64.0.0/10 (de interface met een adres daarbinnen). Verbindingen via een proxy worden niet gebonden.</translation>
     </message>
     <message>
-        <location line="+8090"/>
+        <location line="+8085"/>
         <source>While the selected interface is not available, all P2P, Usenet and update connections stay closed.</source>
         <translation>Zolang de geselecteerde interface niet beschikbaar is, blijven alle P2P-, Usenet- en updateverbindingen gesloten.</translation>
     </message>
     <message>
-        <location line="-8076"/>
+        <location line="-8071"/>
         <source>Max. Sources/File</source>
         <translation>Max. bronnen/bestand</translation>
     </message>
@@ -20056,8 +20160,8 @@ Auto volgt de uploadcapaciteit: 4 onder 4 Mbit/s, 8 onder 20 Mbit/s, 16 onder 10
         <translation>Verbinden met IPv6-peers en -servers vanaf het wisselende tijdelijke adres (RFC 4941). Uit: altijd het vaste adres gebruiken, zodat peers het adres dat we bekendmaken kunnen bereiken.</translation>
     </message>
     <message>
-        <location line="-1011"/>
-        <location line="+1107"/>
+        <location line="-1006"/>
+        <location line="+1102"/>
         <location line="+1807"/>
         <source>General</source>
         <translation>Algemeen</translation>
@@ -20556,15 +20660,15 @@ Elke Usenet-verbinding loopt dan via de proxy, dus de snelheid ervan begrenst de
         <translation>SMTP-serverinstellingen</translation>
     </message>
     <message>
-        <location line="-2122"/>
+        <location line="-2117"/>
         <location line="+23"/>
         <location line="+7"/>
-        <location line="+2095"/>
+        <location line="+2090"/>
         <source>Connection</source>
         <translation>Verbinding</translation>
     </message>
     <message>
-        <location line="-2096"/>
+        <location line="-2091"/>
         <location line="+59"/>
         <source>ed3k</source>
         <translation>ed3k</translation>
@@ -20709,7 +20813,7 @@ Elke Usenet-verbinding loopt dan via de proxy, dus de snelheid ervan begrenst de
     </message>
     <message>
         <location line="+2"/>
-        <location line="+4870"/>
+        <location line="+4865"/>
         <source>Torrents</source>
         <translation>Torrents</translation>
     </message>
@@ -20903,13 +21007,13 @@ Werkt met SOCKS4a-, SOCKS5- en HTTP-proxy&apos;s die HTTPS (CONNECT) toestaan.</
         <translation>UTF-8 activeren</translation>
     </message>
     <message>
-        <location line="-2239"/>
-        <location line="+2270"/>
+        <location line="-2234"/>
+        <location line="+2265"/>
         <source>Server</source>
         <translation>Server</translation>
     </message>
     <message>
-        <location line="-2272"/>
+        <location line="-2267"/>
         <source>Display</source>
         <translation>Weergave</translation>
     </message>
@@ -21654,9 +21758,9 @@ Werkt met SOCKS4a-, SOCKS5- en HTTP-proxy&apos;s die HTTPS (CONNECT) toestaan.</
         <translation>Toevoegen</translation>
     </message>
     <message>
-        <location line="-8918"/>
+        <location line="-8908"/>
         <location line="+30"/>
-        <location line="+750"/>
+        <location line="+745"/>
         <location line="+2165"/>
         <location line="+1087"/>
         <location line="+164"/>
@@ -21745,7 +21849,7 @@ Werkt met SOCKS4a-, SOCKS5- en HTTP-proxy&apos;s die HTTPS (CONNECT) toestaan.</
         <translation>Bandbreedte</translation>
     </message>
     <message>
-        <location line="-5146"/>
+        <location line="-5141"/>
         <source>Downloads that are receiving data, and the sources sending it, are drawn in bold. A source listed under another file (A4AF) is bold too while it transfers. The connected server and the selected category tab are bold as well.</source>
         <translation>Downloads die gegevens ontvangen, en de bronnen die ze sturen, worden vet weergegeven. Een bron onder een ander bestand (A4AF) is ook vet zolang hij overdraagt. De verbonden server en het gekozen categorietabblad zijn ook vet.</translation>
     </message>
@@ -21758,7 +21862,7 @@ Werkt met SOCKS4a-, SOCKS5- en HTTP-proxy&apos;s die HTTPS (CONNECT) toestaan.</
         <translation type="vanished">Maakt eMule Qt de standaardapp voor ed2k://-links. Uitgeschakeld gaan ze naar een andere app die ze opent, als die er is.</translation>
     </message>
     <message>
-        <location line="+322"/>
+        <location line="+317"/>
         <location line="+4769"/>
         <source>Open Router</source>
         <translation>Router openen</translation>
@@ -22127,7 +22231,7 @@ Het antwoord is nooit een oordeel. Niets hiervan kan verhinderen dat een artikel
         <translation>nooit</translation>
     </message>
     <message>
-        <location line="-4376"/>
+        <location line="-4371"/>
         <source>Show free disk space in status bar</source>
         <translation>Vrije schijfruimte in de statusbalk tonen</translation>
     </message>
@@ -22651,8 +22755,8 @@ Voer in wat het controlepaneel van uw provider aangeeft, of 0 om opnieuw te begi
         <translation>Zoekindexers beantwoorden zoekopdrachten op trefwoord en geven een NZB terug. Ze staan los van uw nieuwsservers: op Usenet zijn de provider waarvan u downloadt en de dienst die u doorzoekt verschillende bedrijven.</translation>
     </message>
     <message>
-        <location line="-4377"/>
-        <location line="+4384"/>
+        <location line="-4372"/>
+        <location line="+4379"/>
         <location line="+395"/>
         <location line="+541"/>
         <source>Indexers</source>
@@ -22784,8 +22888,8 @@ Elke pagina is een API-aanroep ten laste van het tegoed van uw account, dus dit 
         <translation>Een feed is een zoekopdracht die vanzelf draait en in de wachtrij zet wat hij vindt. Zijn eerste controle voegt niets toe — hij noteert alleen wat de indexer al toont, omdat een nieuwe feed anders alles zou downloaden wat nog op de server staat.</translation>
     </message>
     <message>
-        <location line="-4539"/>
-        <location line="+4547"/>
+        <location line="-4534"/>
+        <location line="+4542"/>
         <location line="+325"/>
         <location line="+277"/>
         <source>Feeds</source>
@@ -23460,8 +23564,8 @@ Zoek de &quot;standaardgateway&quot; op in de netwerkinstellingen van deze compu
         <translation type="vanished">Routerpagina openen</translation>
     </message>
     <message>
-        <location line="-9508"/>
-        <location line="+9427"/>
+        <location line="-9498"/>
+        <location line="+9417"/>
         <location line="+63"/>
         <source>Directories</source>
         <translation>Mappen</translation>
@@ -24588,8 +24692,8 @@ Uitgesloten torrentbestanden worden daar nooit gedeeld, ook niet in de map Incom
         </translation>
     </message>
     <message>
-        <location line="-9744"/>
-        <location line="+7049"/>
+        <location line="-9734"/>
+        <location line="+7043"/>
         <location line="+7"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
@@ -24646,8 +24750,8 @@ Verbindingen met nieuwsservers schakelen direct om.</translation>
         <translation>De wijziging van de lettergrootte wordt van kracht na een herstart van het programma.</translation>
     </message>
     <message>
-        <location line="-7206"/>
-        <location line="+7650"/>
+        <location line="-7196"/>
+        <location line="+7640"/>
         <source>Web Interface</source>
         <translation>Webinterface</translation>
     </message>
@@ -25133,14 +25237,14 @@ Zoekwoord(en) in Kad-zoekuitdrukkingen moeten minimaal 3 tekens lang zijn.</tran
         <location line="+103"/>
         <location line="+1288"/>
         <location line="+21"/>
-        <location line="+626"/>
+        <location line="+627"/>
         <location line="+1639"/>
         <location line="+0"/>
         <source>Download</source>
         <translation>Downloaden</translation>
     </message>
     <message>
-        <location line="-3554"/>
+        <location line="-3555"/>
         <source>Close All Searches</source>
         <translation>Alle zoekopdrachten sluiten</translation>
     </message>
@@ -25560,13 +25664,13 @@ Zoekwoord(en) in Kad-zoekuitdrukkingen moeten minimaal 3 tekens lang zijn.</tran
     </message>
     <message>
         <location line="+8"/>
-        <location line="+2265"/>
+        <location line="+2266"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
     <message>
-        <location line="-2265"/>
-        <location line="+2265"/>
+        <location line="-2266"/>
+        <location line="+2266"/>
         <source>Paused</source>
         <translation>Gepauzeerd</translation>
     </message>
@@ -25579,7 +25683,7 @@ Zoekwoord(en) in Kad-zoekuitdrukkingen moeten minimaal 3 tekens lang zijn.</tran
         <translation type="vanished">Torrent downloaden</translation>
     </message>
     <message>
-        <location line="-2396"/>
+        <location line="-2397"/>
         <location line="+150"/>
         <source>Save Torrent File...</source>
         <translation>Torrentbestand opslaan...</translation>
@@ -25709,7 +25813,7 @@ Zoekwoord(en) in Kad-zoekuitdrukkingen moeten minimaal 3 tekens lang zijn.</tran
         <translation>Magnet-links kopiëren</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+35"/>
         <location line="+15"/>
         <location line="+10"/>
         <source>Mark as Spam</source>
@@ -32315,7 +32419,7 @@ Laat alles uitgevinkt voor een privétorrent; gebruik hieronder de URL van de pr
 <context>
     <name>eMule::TransferPanel</name>
     <message>
-        <location filename="../src/gui/panels/TransferPanel.cpp" line="+331"/>
+        <location filename="../src/gui/panels/TransferPanel.cpp" line="+332"/>
         <location line="+369"/>
         <location line="+26"/>
         <source>Priority (Download)</source>

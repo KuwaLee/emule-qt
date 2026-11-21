@@ -10,7 +10,7 @@
 
 file(GLOB DAEMON_SOURCES CONFIGURE_DEPENDS "*.cpp" "*.h")
 list(REMOVE_ITEM DAEMON_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
-# ArchiveFill needs ed3k (Ed3kArchiveContents); only made under EMULE_HAVE_ED3K
+# ed3k-only sources: need src/ed3k headers (#244)
 if(NOT EMULE_ED3K)
     list(REMOVE_ITEM DAEMON_SOURCES
         "${CMAKE_CURRENT_SOURCE_DIR}/ArchiveFill.cpp"

@@ -899,13 +899,18 @@ The core keeps listening on TCP port %1 and UDP port %2.</source>
         <translation>eD2K не слушает TCP-порт, поэтому его нельзя проверить.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <location line="+121"/>
+        <location line="+2"/>
+        <source>The network interface selected in Options has no public address known yet, so nothing could be tested over it. Connect to the network first, then test again.</source>
+        <translation>У сетевого интерфейса, выбранного в настройках, ещё нет известного публичного адреса, поэтому через него ничего не удалось проверить. Сначала подключитесь к сети, затем повторите проверку.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+141"/>
         <source>The core did not run the test.</source>
         <translation>Ядро не выполнило проверку.</translation>
     </message>
     <message>
-        <location line="-86"/>
+        <location line="-94"/>
         <source>TCP: %1</source>
         <translation>TCP: %1</translation>
     </message>
@@ -980,6 +985,16 @@ The core keeps listening on TCP port %1 and UDP port %2.</source>
         <translation>UDP недоступен. Узел найдёт меньше пиров и будет полагаться на пробивку NAT.</translation>
     </message>
     <message>
+        <location line="+5"/>
+        <source>Some test packets from the website did not arrive, but peers prove the port open: the packets were lost on the way (often dropped by a VPN or provider), the port is not closed.</source>
+        <translation>Часть тестовых пакетов с сайта не дошла, но пиры доказывают, что порт открыт: пакеты потерялись в пути (часто их отбрасывает VPN или провайдер), порт не закрыт.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The website&apos;s test packets did not arrive.</source>
+        <translation>Тестовые пакеты с сайта не дошли.</translation>
+    </message>
+    <message>
         <location line="+17"/>
         <location line="+26"/>
         <location line="+4"/>
@@ -998,19 +1013,80 @@ The core keeps listening on TCP port %1 and UDP port %2.</source>
         <translation>Проверка...</translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+58"/>
+        <source>other ed3k nodes reach this node at %1</source>
+        <translation>другие узлы ed3k достигают этого узла по адресу %1</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>eD2K clients reach this UDP port at %1 (Kad check passed)</source>
+        <translation>клиенты eD2K достигают этого UDP-порта по адресу %1 (проверка Kad пройдена)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>the eD2K server gave a High ID at %1</source>
+        <translation>сервер eD2K выдал High ID по адресу %1</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>The website&apos;s test failed (%1).</source>
+        <translation>Тест сайта не удался (%1).</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The website&apos;s test connection got no answer: it was dropped on the way.</source>
+        <translation>Тестовое соединение сайта не получило ответа: оно было отброшено в пути.</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+2"/>
+        <source>None of the %n test packet(s) from the website arrived: lost on the way.</source>
+        <translation>
+            <numerusform>Ни один из %n тестового пакета с сайта не дошёл: потерян в пути.</numerusform>
+            <numerusform>Ни один из %n тестовых пакетов с сайта не дошёл: потеряны в пути.</numerusform>
+            <numerusform>Ни один из %n тестовых пакетов с сайта не дошёл: потеряны в пути.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>The website&apos;s test packet did not arrive: lost on the way.</source>
+        <translation>Тестовый пакет с сайта не дошёл: потерян в пути.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>reachable, %1.</source>
+        <translation>доступен, %1.</translation>
+    </message>
+    <message numerus="yes">
+        <location line="+3"/>
+        <source>not reachable: none of the %n test packet(s) arrived (firewall or missing port forwarding)</source>
+        <translation>
+            <numerusform>недоступен: ни один из %n тестового пакета не дошёл (брандмауэр или нет проброса порта)</numerusform>
+            <numerusform>недоступен: ни один из %n тестовых пакетов не дошёл (брандмауэр или нет проброса порта)</numerusform>
+            <numerusform>недоступен: ни один из %n тестовых пакетов не дошёл (брандмауэр или нет проброса порта)</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Only IPv4 was tested: the network interface %1 selected in Options has no IPv6.</source>
+        <translation>Проверен только IPv4: у сетевого интерфейса %1, выбранного в настройках, нет IPv6.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Only IPv6 was tested: the network interface %1 selected in Options has no IPv4.</source>
+        <translation>Проверен только IPv6: у сетевого интерфейса %1, выбранного в настройках, нет IPv4.</translation>
+    </message>
+    <message>
+        <location line="+10"/>
         <source>Peers see this node at %1, not at the tested address, so this result does not apply to it. The test request likely took another route (VPN, proxy or a second internet line).</source>
         <translation>Пиры видят этот узел по адресу %1, а не по проверенному адресу, поэтому этот результат к нему не относится. Запрос проверки, вероятно, пошёл другим путём (VPN, прокси или вторая интернет-линия).</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>ed3k peers already reach this node at %1, so the port is open. The test packet was likely lost on the way.</source>
-        <translation>Пиры ed3k уже достигают этого узла по адресу %1, значит порт открыт. Тестовый пакет, вероятно, потерялся по пути.</translation>
+        <translation type="vanished">Пиры ed3k уже достигают этого узла по адресу %1, значит порт открыт. Тестовый пакет, вероятно, потерялся по пути.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>The server gave a High ID at this address, so the TCP port is open. The test connection was likely lost on the way.</source>
-        <translation>Сервер выдал High ID по этому адресу, значит TCP-порт открыт. Тестовое соединение, вероятно, потерялось по пути.</translation>
+        <translation type="vanished">Сервер выдал High ID по этому адресу, значит TCP-порт открыт. Тестовое соединение, вероятно, потерялось по пути.</translation>
     </message>
 </context>
 <context>
@@ -1278,7 +1354,7 @@ Trust the new certificate?</source>
         <translation>Нормальный</translation>
     </message>
     <message>
-        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="+3987"/>
+        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="+3981"/>
         <source>Test</source>
         <translation>Проверить</translation>
     </message>
@@ -2931,7 +3007,7 @@ M	сжатые данные ещё не полностью приняты
 <context>
     <name>eMule::BugReportDialog</name>
     <message>
-        <location filename="../src/gui/dialogs/BugReportDialog.cpp" line="+60"/>
+        <location filename="../src/gui/dialogs/BugReportDialog.cpp" line="+61"/>
         <location line="+139"/>
         <location line="+144"/>
         <source>Submit Bug Report</source>
@@ -11776,7 +11852,7 @@ Go on?</source>
         </translation>
     </message>
     <message>
-        <location line="+113"/>
+        <location line="+117"/>
         <source>ed3k node list</source>
         <translation>Список узлов ed3k</translation>
     </message>
@@ -16577,12 +16653,12 @@ You are running %2. Open the eMule Qt website?</source>
     <message>
         <location line="+21"/>
         <location line="+7"/>
-        <location line="+1259"/>
+        <location line="+1260"/>
         <source>Version Check</source>
         <translation>Проверка версии</translation>
     </message>
     <message>
-        <location line="-1265"/>
+        <location line="-1266"/>
         <source>You are running the latest version of eMule Qt (v%1).</source>
         <translation>У вас последняя версия eMule Qt (v%1).</translation>
     </message>
@@ -16641,12 +16717,12 @@ Enable at least one under Options → Connection to connect.</source>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1781"/>
+        <location line="+1787"/>
         <source>eD2K: Disconnected</source>
         <translation>eD2K: Отсоединён</translation>
     </message>
     <message>
-        <location line="-1772"/>
+        <location line="-1778"/>
         <source>eD2K Server: %1  (%2 Users)</source>
         <translation>eD2K сервер: %1  (%2 пользователей)</translation>
     </message>
@@ -16687,12 +16763,12 @@ Enable at least one under Options → Connection to connect.</source>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1698"/>
+        <location line="+1704"/>
         <source>Kad: Disconnected</source>
         <translation>Kad: Отсоединён</translation>
     </message>
     <message>
-        <location line="-1654"/>
+        <location line="-1660"/>
         <source>ed3k: Connected</source>
         <translation>ed3k: Соединён</translation>
     </message>
@@ -16762,7 +16838,40 @@ IPv6: %5
         <translation>скрыт (%1/%2 путей)</translation>
     </message>
     <message>
-        <location line="+2624"/>
+        <location line="+1762"/>
+        <source>Built without the hoster resolver, cannot open %1.</source>
+        <translation>Собрано без резолвера хостингов, невозможно открыть %1.</translation>
+    </message>
+    <message>
+        <location line="+661"/>
+        <source>Usenet Disabled</source>
+        <translation>Usenet отключён</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Usenet is turned off, so NZB files and links cannot be added.
+
+Turn it on under Options → Usenet, then try again.</source>
+        <translation>Usenet выключен, поэтому NZB-файлы и ссылки нельзя добавить.
+
+Включите его в Параметры → Usenet и повторите попытку.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Hoster Downloads Disabled</source>
+        <translation>Загрузки с хостингов отключены</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Hoster downloads are turned off, so link containers cannot be opened.
+
+Turn them on under Options → ed3k → Hoster, then try again.</source>
+        <translation>Загрузки с хостингов выключены, поэтому контейнеры ссылок нельзя открыть.
+
+Включите их в Параметры → ed3k → Hoster и повторите попытку.</translation>
+    </message>
+    <message>
+        <location line="+206"/>
         <source>eD2K</source>
         <translation>eD2K</translation>
     </message>
@@ -16797,7 +16906,7 @@ IPv6: %5
         <translation>Пользователей: %1 | Файлов: %2</translation>
     </message>
     <message>
-        <location line="-2620"/>
+        <location line="-2634"/>
         <source>Up: %1(%2)</source>
         <translation>Отдача: %1(%2)</translation>
     </message>
@@ -16834,7 +16943,7 @@ Up: %3 | Down: %4</source>
 Отдача: %3 | Приём: %4</translation>
     </message>
     <message>
-        <location line="+117"/>
+        <location line="+130"/>
         <source>Are you sure you want to exit eMule?
 
 The core is attached: it stops with the GUI, and so do all downloads and uploads.</source>
@@ -16956,7 +17065,7 @@ The core is detached: it keeps running with all downloads and uploads. Open eMul
         <translation>Помощник первого запуска eMule...</translation>
     </message>
     <message>
-        <location line="-892"/>
+        <location line="-898"/>
         <source>Unlimited</source>
         <translation>Без ограничений</translation>
     </message>
@@ -16985,7 +17094,7 @@ Double-click to change</source>
         <translation>Проверка порта не пройдена: зонд не дошёл</translation>
     </message>
     <message>
-        <location line="+686"/>
+        <location line="+692"/>
         <source>IP Filter...</source>
         <translation>IP-фильтр...</translation>
     </message>
@@ -17080,12 +17189,12 @@ Enable it under Options → Web Interface, then try again.</source>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+1617"/>
+        <location line="+1928"/>
         <source>Open Options</source>
         <translation>Открыть настройки</translation>
     </message>
     <message>
-        <location line="-1390"/>
+        <location line="-1701"/>
         <source>Main</source>
         <translation>Основная</translation>
     </message>
@@ -17232,27 +17341,24 @@ Enable it under Options → Web Interface, then try again.</source>
         <translation>Двойной щелчок — информация о сети</translation>
     </message>
     <message>
-        <location line="+160"/>
         <source>Add NZB</source>
-        <translation>Добавить NZB</translation>
+        <translation type="vanished">Добавить NZB</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Usenet is off. Turn it on in Options to add %1.</source>
-        <translation>Usenet выключен. Включите его в настройках, чтобы добавить %1.</translation>
+        <translation type="vanished">Usenet выключен. Включите его в настройках, чтобы добавить %1.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+171"/>
         <source>Open DLC</source>
         <translation>Открыть DLC</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Hoster downloads are off. Turn them on in Options to open %1.</source>
-        <translation>Загрузки с хостингов выключены. Включите их в настройках, чтобы открыть %1.</translation>
+        <translation type="vanished">Загрузки с хостингов выключены. Включите их в настройках, чтобы открыть %1.</translation>
     </message>
     <message>
-        <location line="+654"/>
+        <location line="+653"/>
         <source>BitTorrent Disabled</source>
         <translation>BitTorrent отключён</translation>
     </message>
@@ -17266,7 +17372,7 @@ Turn it on under Options → BitTorrent, then try again.</source>
 Включите его в Настройки → BitTorrent и повторите попытку.</translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+123"/>
         <source>New message — double-click to read</source>
         <translation>Новое сообщение — двойной щелчок для чтения</translation>
     </message>
@@ -17281,7 +17387,7 @@ Turn it on under Options → BitTorrent, then try again.</source>
         <translation>н/д</translation>
     </message>
     <message>
-        <location line="-431"/>
+        <location line="-441"/>
         <source>eD2K Link</source>
         <translation>eD2K ссылка</translation>
     </message>
@@ -17460,7 +17566,7 @@ You get fewer sources and slower downloads, and two Low ID clients can rarely ex
         <translation>Статистика</translation>
     </message>
     <message>
-        <location filename="../src/gui/app/MainWindow.cpp" line="+228"/>
+        <location filename="../src/gui/app/MainWindow.cpp" line="+238"/>
         <location filename="../src/gui/app/ToolbarButtons.h" line="+1"/>
         <source>Usenet</source>
         <translation>Usenet</translation>
@@ -19355,36 +19461,36 @@ Download it again?</source>
 <context>
     <name>eMule::OptionsDialog</name>
     <message>
-        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="-3855"/>
+        <location filename="../src/gui/dialogs/OptionsDialog.cpp" line="-3849"/>
         <source>Options</source>
         <translation>Настройки</translation>
     </message>
     <message>
         <location line="+78"/>
-        <location line="+2714"/>
+        <location line="+2708"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-2713"/>
-        <location line="+2714"/>
+        <location line="-2707"/>
+        <location line="+2708"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location line="-2713"/>
-        <location line="+6971"/>
+        <location line="-2707"/>
+        <location line="+6965"/>
         <source>Apply</source>
         <translation>Применить</translation>
     </message>
     <message>
-        <location line="-6970"/>
+        <location line="-6964"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location line="+313"/>
-        <location line="+2693"/>
+        <location line="+312"/>
+        <location line="+2688"/>
         <location line="+59"/>
         <location line="+6"/>
         <location line="+4"/>
@@ -19396,7 +19502,7 @@ Download it again?</source>
         <translation>IP фильтр</translation>
     </message>
     <message>
-        <location line="-2808"/>
+        <location line="-2803"/>
         <source>IP filter reloaded: %1 entries.</source>
         <translation>IP фильтр перезагружен: %1 записей.</translation>
     </message>
@@ -19423,13 +19529,13 @@ Download it again?</source>
     <message>
         <location line="-65"/>
         <location line="+66"/>
-        <location line="+3188"/>
+        <location line="+3183"/>
         <location line="+3422"/>
         <source>Usenet</source>
         <translation>Usenet</translation>
     </message>
     <message>
-        <location line="-7294"/>
+        <location line="-7288"/>
         <source>Search options</source>
         <translation>Поиск в настройках</translation>
     </message>
@@ -19443,30 +19549,30 @@ Enter: следующая страница, Esc: очистить</translation>
     <message>
         <location line="+622"/>
         <location line="+63"/>
-        <location line="+6610"/>
-        <location line="+2870"/>
+        <location line="+6605"/>
+        <location line="+2865"/>
         <source>BitTorrent</source>
         <translation>BitTorrent</translation>
     </message>
     <message>
-        <location line="-9354"/>
+        <location line="-9344"/>
         <source>User Name</source>
         <translation>Имя клиента</translation>
     </message>
     <message>
         <location line="+8"/>
-        <location line="+6875"/>
+        <location line="+6869"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location line="-6872"/>
+        <location line="-6866"/>
         <source>System Default</source>
         <translation>Системный</translation>
     </message>
     <message>
         <location line="+14"/>
-        <location line="+1060"/>
+        <location line="+1055"/>
         <location line="+459"/>
         <location line="+570"/>
         <location line="+322"/>
@@ -19474,7 +19580,7 @@ Enter: следующая страница, Esc: очистить</translation>
         <translation>Разное</translation>
     </message>
     <message>
-        <location line="-2408"/>
+        <location line="-2403"/>
         <source>Bring to front on link click</source>
         <translation>Выводить на передний план при щелчке по ссылке</translation>
     </message>
@@ -19576,25 +19682,25 @@ Enter: следующая страница, Esc: очистить</translation>
     <message>
         <location line="+8"/>
         <location line="+40"/>
-        <location line="+6760"/>
+        <location line="+6754"/>
         <source>Core</source>
         <translation>Ядро</translation>
     </message>
     <message>
-        <location line="-6773"/>
+        <location line="-6767"/>
         <source>Address:</source>
         <translation>Адрес:</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1766"/>
+        <location line="+1761"/>
         <location line="+808"/>
         <location line="+432"/>
         <source>Port:</source>
         <translation>Порт:</translation>
     </message>
     <message>
-        <location line="-3003"/>
+        <location line="-2998"/>
         <source>authentication token</source>
         <translation>токен аутентификации</translation>
     </message>
@@ -19841,7 +19947,7 @@ Auto follows the upload capacity: 4 below 4 Mbit/s, 8 below 20 Mbit/s, 16 below 
         <translation>База данных поставляется с каждым выпуском. Необязательная бесплатная учётная запись &lt;a href=&quot;https://www.maxmind.com/en/geolite2/signup&quot;&gt;MaxMind GeoLite2&lt;/a&gt; поддерживает её актуальность между выпусками. Этот продукт включает данные GeoLite2, созданные MaxMind.</translation>
     </message>
     <message>
-        <location line="-8909"/>
+        <location line="-8904"/>
         <source>Save CPU &amp;&amp; Memory Usage</source>
         <translation>Экономить CPU &amp;&amp; память</translation>
     </message>
@@ -20010,12 +20116,12 @@ Auto follows the upload capacity: 4 below 4 Mbit/s, 8 below 20 Mbit/s, 16 below 
     </message>
     <message>
         <location line="-4757"/>
-        <location line="+8662"/>
+        <location line="+8657"/>
         <source>TCP</source>
         <translation>TCP</translation>
     </message>
     <message>
-        <location line="-8656"/>
+        <location line="-8651"/>
         <source>UDP</source>
         <translation>UDP</translation>
     </message>
@@ -20047,22 +20153,22 @@ Auto follows the upload capacity: 4 below 4 Mbit/s, 8 below 20 Mbit/s, 16 below 
     <message>
         <location line="+4"/>
         <location line="+2015"/>
-        <location line="+6180"/>
+        <location line="+6175"/>
         <source>Any</source>
         <translation>Любой</translation>
     </message>
     <message>
-        <location line="-8193"/>
+        <location line="-8188"/>
         <source>Use only this network interface, for example a VPN tunnel. Pick one from the list, or type an IP address or a subnet such as 10.64.0.0/10 (the interface holding an address in it). Connections through a proxy are not bound.</source>
         <translation>Использовать только этот сетевой интерфейс, например VPN-туннель. Выберите из списка или введите IP-адрес либо подсеть, например 10.64.0.0/10 (интерфейс с адресом из неё). Соединения через прокси не привязываются.</translation>
     </message>
     <message>
-        <location line="+8090"/>
+        <location line="+8085"/>
         <source>While the selected interface is not available, all P2P, Usenet and update connections stay closed.</source>
         <translation>Пока выбранный интерфейс недоступен, все P2P-, Usenet- и update-соединения остаются закрытыми.</translation>
     </message>
     <message>
-        <location line="-8076"/>
+        <location line="-8071"/>
         <source>Max. Sources/File</source>
         <translation>Макс. источников/файл</translation>
     </message>
@@ -20136,8 +20242,8 @@ Auto follows the upload capacity: 4 below 4 Mbit/s, 8 below 20 Mbit/s, 16 below 
         <translation>Подключаться к IPv6-пирам и серверам с ротируемого временного адреса (RFC 4941). Выкл.: всегда использовать постоянный адрес, чтобы пиры могли достучаться до объявленного адреса.</translation>
     </message>
     <message>
-        <location line="-1011"/>
-        <location line="+1107"/>
+        <location line="-1006"/>
+        <location line="+1102"/>
         <location line="+1807"/>
         <source>General</source>
         <translation>Основные</translation>
@@ -20636,15 +20742,15 @@ Every Usenet connection then passes through the proxy, so its speed caps the dow
         <translation>Настройки сервера SMTP</translation>
     </message>
     <message>
-        <location line="-2122"/>
+        <location line="-2117"/>
         <location line="+23"/>
         <location line="+7"/>
-        <location line="+2095"/>
+        <location line="+2090"/>
         <source>Connection</source>
         <translation>Соединение</translation>
     </message>
     <message>
-        <location line="-2096"/>
+        <location line="-2091"/>
         <location line="+59"/>
         <source>ed3k</source>
         <translation>ed3k</translation>
@@ -20789,7 +20895,7 @@ Every Usenet connection then passes through the proxy, so its speed caps the dow
     </message>
     <message>
         <location line="+2"/>
-        <location line="+4870"/>
+        <location line="+4865"/>
         <source>Torrents</source>
         <translation>Торренты</translation>
     </message>
@@ -20983,13 +21089,13 @@ Works with SOCKS4a, SOCKS5 and HTTP proxies that allow HTTPS (CONNECT).</source>
         <translation>Включить UTF-8</translation>
     </message>
     <message>
-        <location line="-2239"/>
-        <location line="+2270"/>
+        <location line="-2234"/>
+        <location line="+2265"/>
         <source>Server</source>
         <translation>Сервер</translation>
     </message>
     <message>
-        <location line="-2272"/>
+        <location line="-2267"/>
         <source>Display</source>
         <translation>Отображение</translation>
     </message>
@@ -21734,9 +21840,9 @@ Works with SOCKS4a, SOCKS5 and HTTP proxies that allow HTTPS (CONNECT).</source>
         <translation>Добавить</translation>
     </message>
     <message>
-        <location line="-8918"/>
+        <location line="-8908"/>
         <location line="+30"/>
-        <location line="+750"/>
+        <location line="+745"/>
         <location line="+2165"/>
         <location line="+1087"/>
         <location line="+164"/>
@@ -21825,7 +21931,7 @@ Works with SOCKS4a, SOCKS5 and HTTP proxies that allow HTTPS (CONNECT).</source>
         <translation>Пропускная способность</translation>
     </message>
     <message>
-        <location line="-5146"/>
+        <location line="-5141"/>
         <source>Downloads that are receiving data, and the sources sending it, are drawn in bold. A source listed under another file (A4AF) is bold too while it transfers. The connected server and the selected category tab are bold as well.</source>
         <translation>Загрузки, получающие данные, и источники, которые их отправляют, выделяются жирным. Источник под другим файлом (A4AF) тоже выделяется жирным во время передачи. Подключённый сервер и выбранная вкладка категории также выделяются жирным.</translation>
     </message>
@@ -21838,7 +21944,7 @@ Works with SOCKS4a, SOCKS5 and HTTP proxies that allow HTTPS (CONNECT).</source>
         <translation type="vanished">Делает eMule Qt приложением по умолчанию для ссылок ed2k://. При отключении они передаются другому приложению, которое их открывает, если оно есть.</translation>
     </message>
     <message>
-        <location line="+322"/>
+        <location line="+317"/>
         <location line="+4769"/>
         <source>Open Router</source>
         <translation>Открыть роутер</translation>
@@ -22208,7 +22314,7 @@ The answer is never a verdict. Nothing here can stop an article being fetched �
         <translation>никогда</translation>
     </message>
     <message>
-        <location line="-4376"/>
+        <location line="-4371"/>
         <source>Show free disk space in status bar</source>
         <translation>Показывать свободное место на диске в строке состояния</translation>
     </message>
@@ -22732,8 +22838,8 @@ Enter what your provider&apos;s control panel says, or 0 to start again.</source
         <translation>Индексаторы отвечают на поиск по ключевым словам и возвращают NZB. Они не связаны с вашими news-серверами: в Usenet провайдер, с которого вы загружаете, и сервис, в котором ищете, — разные компании.</translation>
     </message>
     <message>
-        <location line="-4377"/>
-        <location line="+4384"/>
+        <location line="-4372"/>
+        <location line="+4379"/>
         <location line="+395"/>
         <location line="+541"/>
         <source>Indexers</source>
@@ -22865,8 +22971,8 @@ Every page is an API call against the allowance your account has, so this is a s
         <translation>Лента — это поиск, который выполняется сам и ставит найденное в очередь. Первая проверка ничего не добавляет — она лишь запоминает то, что индексатор уже содержит, иначе новая лента загрузила бы всё, что ещё есть на сервере.</translation>
     </message>
     <message>
-        <location line="-4539"/>
-        <location line="+4547"/>
+        <location line="-4534"/>
+        <location line="+4542"/>
         <location line="+325"/>
         <location line="+277"/>
         <source>Feeds</source>
@@ -23541,8 +23647,8 @@ Look up the &quot;default gateway&quot; in this computer&apos;s network settings
         <translation type="vanished">Открыть страницу роутера</translation>
     </message>
     <message>
-        <location line="-9508"/>
-        <location line="+9427"/>
+        <location line="-9498"/>
+        <location line="+9417"/>
         <location line="+63"/>
         <source>Directories</source>
         <translation>Папки</translation>
@@ -24671,8 +24777,8 @@ Torrent files left out are never shared there, also inside the incoming folder. 
         </translation>
     </message>
     <message>
-        <location line="-9744"/>
-        <location line="+7049"/>
+        <location line="-9734"/>
+        <location line="+7043"/>
         <location line="+7"/>
         <source>Proxy</source>
         <translation>Прокси</translation>
@@ -24729,8 +24835,8 @@ News server connections switch over immediately.</source>
         <translation>Смена размера шрифта вступит в силу после перезапуска приложения.</translation>
     </message>
     <message>
-        <location line="-7206"/>
-        <location line="+7650"/>
+        <location line="-7196"/>
+        <location line="+7640"/>
         <source>Web Interface</source>
         <translation>Web интерфейс</translation>
     </message>
@@ -25217,14 +25323,14 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <location line="+103"/>
         <location line="+1288"/>
         <location line="+21"/>
-        <location line="+626"/>
+        <location line="+627"/>
         <location line="+1639"/>
         <location line="+0"/>
         <source>Download</source>
         <translation>Скачать</translation>
     </message>
     <message>
-        <location line="-3554"/>
+        <location line="-3555"/>
         <source>Close All Searches</source>
         <translation>Закрыть все поиски</translation>
     </message>
@@ -25644,13 +25750,13 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
     </message>
     <message>
         <location line="+8"/>
-        <location line="+2265"/>
+        <location line="+2266"/>
         <source>%1 (%2)</source>
         <translation>%1 (%2)</translation>
     </message>
     <message>
-        <location line="-2265"/>
-        <location line="+2265"/>
+        <location line="-2266"/>
+        <location line="+2266"/>
         <source>Paused</source>
         <translation>Пауза</translation>
     </message>
@@ -25663,7 +25769,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="vanished">Загрузить торрент</translation>
     </message>
     <message>
-        <location line="-2396"/>
+        <location line="-2397"/>
         <location line="+150"/>
         <source>Save Torrent File...</source>
         <translation>Сохранить торрент-файл...</translation>
@@ -25793,7 +25899,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation>Копировать magnet-ссылки</translation>
     </message>
     <message>
-        <location line="+34"/>
+        <location line="+35"/>
         <location line="+15"/>
         <location line="+10"/>
         <source>Mark as Spam</source>
@@ -32428,7 +32534,7 @@ Leave all unchecked for a private torrent; use the private tracker&apos;s URL be
 <context>
     <name>eMule::TransferPanel</name>
     <message>
-        <location filename="../src/gui/panels/TransferPanel.cpp" line="+331"/>
+        <location filename="../src/gui/panels/TransferPanel.cpp" line="+332"/>
         <location line="+369"/>
         <location line="+26"/>
         <source>Priority (Download)</source>
