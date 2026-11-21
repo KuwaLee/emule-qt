@@ -26580,7 +26580,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
 <context>
     <name>eMule::ServerListModel</name>
     <message>
-        <location filename="../src/gui/controls/ServerListModel.cpp" line="+74"/>
+        <location filename="../src/gui/controls/ServerListModel.cpp" line="+77"/>
         <source>%1 (disabled)</source>
         <translation>%1 (disabilitato)</translation>
     </message>
@@ -26597,7 +26597,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>No</translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="+105"/>
         <source>Server Name</source>
         <translation>Nome server</translation>
     </message>
@@ -26714,7 +26714,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
 <context>
     <name>eMule::ServerPanel</name>
     <message>
-        <location filename="../src/gui/panels/ServerPanel.cpp" line="+338"/>
+        <location filename="../src/gui/panels/ServerPanel.cpp" line="+344"/>
         <location line="+91"/>
         <source>Disconnect</source>
         <translation>Disconnetti</translation>
@@ -26726,12 +26726,12 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
     </message>
     <message>
         <location line="+2"/>
-        <location line="+425"/>
+        <location line="+437"/>
         <source>Connect</source>
         <translation>Connetti</translation>
     </message>
     <message>
-        <location line="-492"/>
+        <location line="-510"/>
         <source>Invalid URL: %1</source>
         <translation>URL non valido: %1</translation>
     </message>
@@ -26761,26 +26761,26 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>server.met scaricato, &quot;%1&quot; estratto (%2 byte). Analisi in corso...</translation>
     </message>
     <message>
-        <location line="+624"/>
+        <location line="+642"/>
         <location line="+2"/>
         <location line="+25"/>
-        <location line="+41"/>
+        <location line="+44"/>
         <source>IP:Port:</source>
         <translation>IP:Porta:</translation>
     </message>
     <message>
-        <location line="-68"/>
+        <location line="-71"/>
         <source>Unknown</source>
         <translation>Sconosciuto</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+66"/>
+        <location line="+69"/>
         <source>ID:</source>
         <translation>ID:</translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-53"/>
         <source>eD2K Server</source>
         <translation>Server eD2K</translation>
     </message>
@@ -26790,7 +26790,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>Descrizione:</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Version:</source>
         <translation>Versione:</translation>
     </message>
@@ -26859,7 +26859,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>▸ Server (%1)</translation>
     </message>
     <message>
-        <location line="-643"/>
+        <location line="-658"/>
         <source>Connect To</source>
         <translation>Connetti a</translation>
     </message>
@@ -26875,12 +26875,12 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
     </message>
     <message>
         <location line="+1"/>
-        <location line="+508"/>
+        <location line="+523"/>
         <source>Normal</source>
         <translation>Normale</translation>
     </message>
     <message>
-        <location line="-507"/>
+        <location line="-522"/>
         <source>High</source>
         <translation>Alta</translation>
     </message>
@@ -26940,7 +26940,12 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>Cerca...</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+8"/>
+        <source>Show Raw IPs</source>
+        <translation>Mostra IP non risolti</translation>
+    </message>
+    <message>
+        <location line="+60"/>
         <source>▸ Servers (0)</source>
         <translation>▸ Server (0)</translation>
     </message>
@@ -26997,7 +27002,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
     </message>
     <message>
         <location line="+6"/>
-        <location line="+44"/>
+        <location line="+47"/>
         <location line="+3"/>
         <location line="+10"/>
         <location line="+3"/>
@@ -27008,7 +27013,7 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>Stato:</translation>
     </message>
     <message>
-        <location line="-102"/>
+        <location line="-105"/>
         <source>Connected</source>
         <translation>Connesso</translation>
     </message>
@@ -27018,7 +27023,12 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         <translation>High ID</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+19"/>
+        <source>Hostname:</source>
+        <translation>Nome host:</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <location line="+49"/>
         <source>Connecting...</source>
         <translation>Connessione...</translation>
@@ -27049,12 +27059,12 @@ Le parole chiave per la ricerca sulla rete Kad devono avere un minimo di 3 carat
         </translation>
     </message>
     <message>
-        <location line="-739"/>
+        <location line="-742"/>
         <source>Low ID</source>
         <translation>Low ID</translation>
     </message>
     <message>
-        <location line="+386"/>
+        <location line="+389"/>
         <source>Invalid server.met header: 0x%1</source>
         <translation>Intestazione server.met non valida: 0x%1</translation>
     </message>

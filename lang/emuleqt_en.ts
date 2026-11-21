@@ -24779,7 +24779,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
 <context>
     <name>eMule::ServerListModel</name>
     <message>
-        <location filename="../src/gui/controls/ServerListModel.cpp" line="+76"/>
+        <location filename="../src/gui/controls/ServerListModel.cpp" line="+79"/>
         <location line="+3"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
@@ -24791,7 +24791,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="+105"/>
         <source>Server Name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24896,12 +24896,12 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-121"/>
         <source>%1 (disabled)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+119"/>
+        <location line="+122"/>
         <source>Obfuscation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24909,29 +24909,29 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
 <context>
     <name>eMule::ServerPanel</name>
     <message>
-        <location filename="../src/gui/panels/ServerPanel.cpp" line="+342"/>
-        <location line="+425"/>
+        <location filename="../src/gui/panels/ServerPanel.cpp" line="+348"/>
+        <location line="+437"/>
         <source>Connect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-427"/>
+        <location line="-439"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+718"/>
+        <location line="+733"/>
         <source>▸ Servers (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-720"/>
+        <location line="-735"/>
         <location line="+91"/>
         <source>Disconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-154"/>
+        <location line="-160"/>
         <source>Invalid URL: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24956,7 +24956,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+117"/>
         <source>Connect To</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24972,12 +24972,12 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
     </message>
     <message>
         <location line="+1"/>
-        <location line="+508"/>
+        <location line="+523"/>
         <source>Normal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-507"/>
+        <location line="-522"/>
         <source>High</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25037,7 +25037,12 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+8"/>
+        <source>Show Raw IPs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+60"/>
         <source>▸ Servers (0)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25094,7 +25099,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
     </message>
     <message>
         <location line="+6"/>
-        <location line="+44"/>
+        <location line="+47"/>
         <location line="+3"/>
         <location line="+10"/>
         <location line="+3"/>
@@ -25105,7 +25110,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-102"/>
+        <location line="-105"/>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25115,7 +25120,12 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+19"/>
+        <source>Hostname:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <location line="+49"/>
         <source>Connecting...</source>
         <translation type="unfinished"></translation>
@@ -25146,36 +25156,36 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         </translation>
     </message>
     <message>
-        <location line="-739"/>
+        <location line="-742"/>
         <source>Low ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-634"/>
+        <location line="-652"/>
         <source>Downloaded server.met, unpacked &quot;%1&quot; (%2 bytes). Parsing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+624"/>
+        <location line="+642"/>
         <location line="+2"/>
         <location line="+25"/>
-        <location line="+41"/>
+        <location line="+44"/>
         <source>IP:Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-68"/>
+        <location line="-71"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+66"/>
+        <location line="+69"/>
         <source>ID:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-50"/>
+        <location line="-53"/>
         <source>eD2K Server</source>
         <translation type="unfinished"></translation>
     </message>
@@ -25185,7 +25195,7 @@ The keyword(s) used in a Kad search expression must have a minimum length of 3 c
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Version:</source>
         <translation type="unfinished"></translation>
     </message>
